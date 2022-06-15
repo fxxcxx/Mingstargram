@@ -1,4 +1,4 @@
-<h1 align="middle">Mingstagram📸</h1>
+<h1 align="middle">Mingstargram📸</h1>
 
 ## 👀 개요
 

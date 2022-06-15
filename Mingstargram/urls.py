@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import Sub
+
+from content.views import Main
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Sub.as_view()) #sub 클래스를 뷰로 사용
+    path('', Main.as_view())  # sub 클래스를 뷰로 사용
 ]

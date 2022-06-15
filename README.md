@@ -14,7 +14,7 @@ Mingstargram
   ㄴ content
     ㄴ migrations
       ㄴ 0001_initial.py
-    ㄴ __init__.py
+      ㄴ __init__.py
     ㄴ __init__.py
     ㄴ admin.py
     ㄴ apps.py

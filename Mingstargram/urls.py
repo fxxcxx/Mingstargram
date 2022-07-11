@@ -16,14 +16,15 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from content.views import Main, UploadFeed
+from content.views import Main
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Main.as_view()),  # sub 클래스를 뷰로 사용
-    path('content/upload', UploadFeed.as_view())
+    path('content/', include('content.urls')),  # upload 불러때
+    path('user/', include('user.urls'))  # upload 불러때
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

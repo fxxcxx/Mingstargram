@@ -31,6 +31,6 @@ class Login(APIView):
         return render(request, "user/login.html")
 
     def post(self, request):
-        # 로그인
+        # 로그인 hi
 
         pass

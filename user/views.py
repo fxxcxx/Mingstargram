@@ -31,6 +31,22 @@ class Login(APIView):
         return render(request, "user/login.html")
 
     def post(self, request):
-        # 로그인
+        email = request.data.get('email', None)
+        password = request.data.get('password', None)
 
-        pass
+        user = User.objects.filter(email=email).first()  # 객체 중 하나만 선택해서 return
+
+        if user is None:  # 정보 없을 때
+            return Response(status=400, data=dict(message="회원정보가 잘못되었습니다."))
+
+        if user.check_password(password):
+            request.session['email'] = email
+            return Response(status=200)
+        else:
+            return Response(status=400, data=dict(message="회원정보가 잘못되었습니다."))
+
+
+class LogOut(APIView):
+    def get(self, request):
+        request.session.flush()
+        return render(request, "user/login.html")

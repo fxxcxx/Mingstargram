@@ -130,3 +130,6 @@ MEDIA_URL = '/media/'  # 항상 / 로 끝나도록 설정
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'user.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': ('rest_framework.parsers.FormParser', 'rest_framework.parsers.MultiPartParser')}
